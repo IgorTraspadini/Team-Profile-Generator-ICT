@@ -56,17 +56,23 @@ const questions_2 = [
   }
 ]
 
+
+
 function init() {
   inquirer
     .prompt(manager_questions)
     .then((response) => {
-      EmployeeArray.push(response);
+      EmployeeArray.push(new Manager(name=response.managerName, id=response.managerId, email=response.managerEmail, officeNumber=response.officeNumber));
     }
     )
     .then(() => option())
 }
 
-
+// function to write README file
+function writeToFile(fileName, data) {
+  fs.writeFile(file = fileName,
+    data, (err) => err ? console.error(err) : console.log('html created!'))
+}
 
 
 function option() {
@@ -81,7 +87,7 @@ function option() {
       }
       else {
         console.log(EmployeeArray);
-        render(EmployeeArray);
+        writeToFile(outputPath, render(EmployeeArray));
       }
     })
 }
