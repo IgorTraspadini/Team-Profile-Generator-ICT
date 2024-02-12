@@ -86,7 +86,6 @@ function option() {
 
       }
       else {
-        console.log(EmployeeArray);
         writeToFile(outputPath, render(EmployeeArray));
       }
     })
