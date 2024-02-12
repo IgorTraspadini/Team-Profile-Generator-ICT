@@ -12,3 +12,79 @@ const render = require("./src/page-template.js");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
+var EmployeeArray = [];
+
+const manager_questions = [
+  {
+    type: "input",
+    message: "What's the manager name?",
+    name: "managerName",
+    required: true
+  },
+  {
+    type: "input",
+    message: "What's the manager's ID?",
+    name: "managerId",
+    required: true
+  },
+  {
+    type: "input",
+    message: "What's the manager's email?",
+    name: "managerEmail",
+    required: true,
+    validate: function (email) {
+      // Regex mail check (return true if valid mail)
+      return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+    }
+  },
+  {
+    type: "input",
+    message: "What's the office number?",
+    name: "officeNumber",
+    required: true
+  }
+]
+
+const questions_2 = [
+  {
+    type: 'list',
+    message: "Provide the project license.",
+    name: 'option',
+    choices: ['Add an engineer', 'Add an intern', 'Finish building the team'],
+    required: true,
+    default: 'Add an engineer'
+  }
+]
+
+function init() {
+  inquirer
+    .prompt(manager_questions)
+    .then((response) => {
+      EmployeeArray.push(response);
+    }
+    )
+    .then(() => option())
+}
+
+
+
+
+function option() {
+  inquirer
+    .prompt(questions_2)
+    .then((response) => {
+      if (response.option === 'Add an engineer') {
+
+      }
+      else if (response.option === 'Add an intern') {
+
+      }
+      else {
+        console.log(EmployeeArray);
+        render(EmployeeArray);
+      }
+    })
+}
+
+
+init();
