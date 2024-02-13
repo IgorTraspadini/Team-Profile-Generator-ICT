@@ -29,6 +29,8 @@ node index.js
 
 ## Links
 - [HTML sample file](https://github.com/IgorTraspadini/Team-Profile-Generator-ICT/blob/main/output/team.html)
+  
+![sample](https://github.com/IgorTraspadini/Team-Profile-Generator-ICT/assets/126266157/30fde757-2f87-4f10-9a7c-c270cfa1925e)
 
 ## References 
 - [Node.js](https://nodejs.org/en)
