@@ -4,7 +4,7 @@ const generateTeam = team => {
     // creates the manager html
     const generateManager = manager => {
         return `
-        <div class="card employee-card" style="border-radius: 1rem">
+        <div class="card employee-card m-2" style="box-shadow: 5px 5px 5px lightblue;">
         <div class="card-header" style="background-color: lightblue;">
             <h2 class="card-title">${manager.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
@@ -23,7 +23,7 @@ const generateTeam = team => {
     // creates the html for engineers
     const generateEngineer = engineer => {
         return `
-        <div class="card employee-card" style="border-radius: 1rem">
+        <div class="card employee-card m-2" style="box-shadow: 5px 5px 5px cadetblue;">
     <div class="card-header" style="background-color: cadetblue;">
         <h2 class="card-title">${engineer.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
@@ -42,8 +42,8 @@ const generateTeam = team => {
     // creates the html for interns
     const generateIntern = intern => {
         return `
-        <div class="card employee-card" style="border-radius: 1rem">
-    <div class="card-header">
+        <div class="card employee-card m-2" style="box-shadow: 5px 5px 5px aquamarine;">
+    <div class="card-header" style="background-color: aquamarine;">
         <h2 class="card-title">${intern.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
     </div>
