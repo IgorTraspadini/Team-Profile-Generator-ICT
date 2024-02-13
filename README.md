@@ -25,7 +25,7 @@ npm install
 node index.js
 ```
 ## Tests
-
+![test](https://github.com/IgorTraspadini/Team-Profile-Generator-ICT/assets/126266157/1f8f9d24-d89e-4c69-a740-1add7fb3b4e8)
 
 ## Links
 - [HTML sample file](https://github.com/IgorTraspadini/Team-Profile-Generator-ICT/blob/main/output/team.html)
