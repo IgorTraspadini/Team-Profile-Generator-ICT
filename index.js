@@ -68,7 +68,7 @@ function init() {
 }
 
 
-function addEngineer (){
+function addEngineer() {
   const engineer_questions = [
     {
       type: "input",
@@ -108,6 +108,45 @@ function addEngineer (){
     .then(() => option())
 }
 
+function addIntern() {
+  const intern_questions = [
+    {
+      type: "input",
+      message: "What's the intern's name?",
+      name: "internName",
+      required: true
+    },
+    {
+      type: "input",
+      message: "What's the intern's ID?",
+      name: "internId",
+      required: true
+    },
+    {
+      type: "input",
+      message: "What's the intern's email?",
+      name: "internEmail",
+      required: true,
+      validate: function (email) {
+        // Regex mail check (return true if valid mail)
+        return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+      }
+    },
+    {
+      type: "input",
+      message: "What's the Intern's school name?",
+      name: "school",
+      required: true
+    }
+  ]
+  inquirer
+    .prompt(intern_questions)
+    .then((response) => {
+      EmployeeArray.push(new Intern(name = response.internName, id = response.internId, email = response.internEmail, github = response.school));
+    }
+    )
+    .then(() => option())
+}
 
 // function to write html file
 function writeToFile(fileName, data) {
@@ -123,7 +162,7 @@ function option() {
         addEngineer();
       }
       else if (response.option === 'Add an intern') {
-
+        addIntern();
       }
       else {
         writeToFile(outputPath, render(EmployeeArray));
